@@ -16,13 +16,13 @@
 
   ```bash
   # author 정보 등록
-  $ git config --global user.name {user name}
+  $ git config --global user.name {user name} #띄어쓰기가 필요한 경우 따옴표 사용
   $ git config --global user.email {user email}
   
   # author 정보 확인
   $ git config --global --list
-  user.name=Changoh Yoo
-  user.email=educiao.hphk@gmail.com
+  user.name=Yeonji Lee
+  user.email=yeonji.dev@gmail.com
   ```
 
 
@@ -33,8 +33,7 @@
 
 ```bash
 $ git init
-Initialized empty Git repository in C:/Users/educi/Desktop/SSAFY_05/keynotes/.gi
-t/
+Initialized empty Git repository in C:/Users/LYJ/Desktop/SSAFY/TIL/.git/
 ```
 
 * `.git` 폴더가 생성되며, 이 곳에 저장소의 git 관련 정보가 저장된다.
@@ -69,7 +68,7 @@ $ git commit -m "스타트캠프 소스코드 추가"
 ```bash
 $ git log
 
-$ git log --oneline
+$ git log --oneline  #(예시)
 449e7a6 (HEAD -> master, origin/master) 텔레그램 메시지 전송 코드 추가
 e5a97ad README 수정!
 37ea0a7 README 내용 수정
@@ -111,8 +110,8 @@ $ git push gitlab master
 
 ```bash
 $ git remote -v
-origin  https://github.com/educiao-hphk/TIL-gwangju.git (fetch)
-origin  https://github.com/educiao-hphk/TIL-gwangju.git (push)
+origin  https://github.com/yeonjii/TIL.git (fetch)
+origin  https://github.com/yeonjii/TIL.git (push)
 ```
 
 
