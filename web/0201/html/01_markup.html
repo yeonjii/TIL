@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>학생 건강 설문</title>
+</head>
+
+<body>
+  <header>
+    <!-- 싸피 홈페이지로 이동하는 링크 -->
+    <a href="https://www.ssafy.com">
+      <img src="ssafy.png" alt="SSAFY LOGO" width="250">
+    </a>
+    <h1>SSAFY 5기 학생 건강설문</h1>
+  </header>
+  <section>
+    <!-- 건강 설문 작성 form -->
+    <form action="">
+      <!-- 이름 입력 -->
+      <div>
+        <label for="name">이름을 입력해주세요: </label>
+        <input type="text" id="name" name="name" autofocus>
+        <!-- 라벨에 있는 for 속성이랑 인풋의 id랑 서로 연결 -->
+      </div>
+
+      <hr>
+
+      <!-- 지역 선택 -->
+      <div>
+        <label for="region">지역을 선택해주세요: </label>
+        <select name="region" id="region">
+          <!--키 밸류 처럼 (name value) 이름표를 붙여준다고 생각. (region seoul) 이렇게 같이 감-->
+          <option value="" disabled selected>선택해주세요</option>
+          <option value="seoul">서울</option>
+          <option value="daejeon">대전</option>
+          <option value="gwangju">광주</option>
+          <option value="gumi">구미</option>
+          <option value="pyeongyang" disabled>평양</option>
+        </select>
+      </div>
+
+      <hr>
+
+      <!-- 체온 선택 -->
+      <div>
+        <p>오늘의 체온을 선택해주세요.</p>
+        <input type="radio" id="normal" name="body-heat" value="normal">
+        <!--"body-heat"라는 이름표로 둘을 묶어줌. 체크박스 하나만 선택될수있게-->
+        <label for="normal">37도 미만</label>
+        <input type="radio" id="warning" name="body-heat" value="warning">
+        <label for="warning">37도 이상</label>
+      </div>
+      <hr>
+
+      <input type="submit" value="싸피에 제출하기">
+    </form>
+  </section>
+  <footer>
+    <!-- footer 내용 -->
+    Google 설문지를 통해 비밀번호를 제출하지 마시오.
+  </footer>
+</body>
+
+</html>

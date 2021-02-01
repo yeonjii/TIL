@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* 전체 선택자 (모든 태그들 전부 다 선택)*/
+    * {
+      color: red;
+    }
+
+    /* 요소 선택자 (div, p 같은거 직접 선택)*/
+    h2 {
+      color: orange;
+    }
+
+    h3, 
+    h4 {
+      font-size: 10px;
+    }
+
+    /* 
+    클래스 선택자 
+    마침표(.) 문자로 시작하여 해당 클래스가 적용된 문서의 모든 항목을 선택한다.
+    <div class="green"></div> 
+    .green {
+
+    }
+    */
+    .green {
+      color: green;
+    }
+
+    /* 
+    id 선택자 
+    # 문자로 시작하며, 기본적으로 클래스 선택자와 같은 방식으로 사용한다.
+    ID는 문서에서 단 한번만 사용할 수 있으며, 요소에서 단일 ID값만 적용할 수 있다.
+    */
+    #purple {
+      color: purple;
+    }
+
+    /* 자식 결합자; 내 바로 아래 자식 요소 선택
+    .box 바로 밑에 있는 p 태그 */
+    .box > p {
+      font-size: 30px;
+    }
+
+    /* 자손 결합자; 내 아래에 해당하는 모든 거 다 선택 */
+    .box p {
+      color: blue;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1 class="green">SSAFY</h1>
+  <h2>선택자 연습</h2>
+  <div class="green box">  <!--클래스 2개 있는거임. 그린이랑 박스랑 따로-->
+    box contents
+    <div>
+      <p>지역 목록</p>  <!--p는 div의 자식임. box의 자식 아님!-->
+      <ul>
+        <li>서울</li>
+        <li id="purple">인천</li>  <!--id는 무조건 하나만 존재!-->
+        <li>강원</li>
+        <li>경기</li>
+      </ul>
+    </div>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequuntur debitis nulla quos delectus recusandae voluptates, ut assumenda! Dolorem sed neque obcaecati totam itaque iusto alias perferendis aspernatur eum consectetur!</P>
+  </div>
+  <h3>HELLO</h3>
+  <h4>CSS</h4>
+</body>
+</html>

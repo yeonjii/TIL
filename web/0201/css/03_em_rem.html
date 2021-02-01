@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      em : (부모 요소) 기준. 상속의 영향을 받음.
+      rem : 최상위 요소(<html> : 16px) 기준으로 결정. 상속 영향을 덜 받음. 값이 안 변할 확률이 더 높아서 이걸 쓰는게 낫다..
+     */
+
+    .em {
+      font-size: 1.5em;
+    }
+
+    .rem {
+      font-size: 1.5rem;
+    }
+
+  </style>
+</head>
+<body>
+  <ul class="em">  <!-- 얘의 부모요소 <html> => 24px-->
+    <li class="em">1.5em</li>  <!-- 얘의 부모요소 <ul>(24px) => 36px-->
+    <li class="rem">1.5rem</li>
+    <li>no class</li>
+  </ul>
+</body>
+</html>

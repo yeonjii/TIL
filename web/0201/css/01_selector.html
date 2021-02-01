@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+     CSS 적용 우선순위
+     id, class, !important, element(tags), inline, 소스코드 순서
+
+     (가장 센 순서 순)
+     1. !important (이거 많이 쓰면 나중에 기술면접에서 개까임.. 이건 최대한 안써야함)
+     2. inline 태그 안에서 직접 선언해 주는거. 이것도 일반적으로는 많이 안쓰는게 좋음. 소스코드가 1000-2000줄 있는데 스타일도 같이 있으면 가독성 떨어지고 유지보수 어려움. 통일을 잘 해줘야함-> how? 클래스로 따로 빼주는게 좋다!!
+     3. id
+     4. class
+     5. element(tags)
+     6. 소스코드 순서
+     */
+
+    h2 {
+      color: darkviolet !important;
+    }
+
+    p {
+      color: orange;
+    }
+    
+    .blue {
+      color: blue;
+    }
+
+    .green {
+      color: green;
+    }
+
+    #red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <p>1</p>
+  <p class="blue">2</p>
+  <p class="blue green">3</p>
+  <p class="green blue">4</p>
+  <p id="red" class="blue">5</p>
+  <h2 id="red" class="blue">6</h2>
+  <p id="red" class="blue" style="color: yellow;">7</p>
+  <h2 id="red" class="blue" style="color: yellow;">8</h2>
+</body>
+</html>
