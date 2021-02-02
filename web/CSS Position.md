@@ -112,7 +112,7 @@
 
 ```
 
-![relative](CSS Position.assets/relative.png)
+<img src="CSS Position.assets/relative.png" alt="relative"  />
 
 ---
 
@@ -163,7 +163,7 @@
 }
 ```
 
-![absolute_1](CSS Position.assets/absolute_1.png)
+<img src="CSS Position.assets/absolute_1.png" alt="absolute_1" style="zoom:;" />
 
 <br>
 
@@ -198,7 +198,7 @@
 }
 ```
 
-![absolute_2](CSS Position.assets/absolute_2.png)
+<img src="CSS Position.assets/absolute_2.png" alt="absolute_2"  />
 
 <br>
 
@@ -248,13 +248,13 @@
 
 이런식으로 뷰포트를 기준으로 2번 박스가 위치한다. 이때 화면크기를 변경하지 않은 채로 스크롤을 움직이면 fixed 와 달리 처음 보인 뷰포트 기준으로 고정되어있다. 그러나 화면 크기를 움직이면 그 뷰포트에 맞게 움직인다. 
 
-![absolute_3-1](CSS Position.assets/absolute_3-1.png)
+<img src="CSS Position.assets/absolute_3-1.png" alt="absolute_3-1"  />
 
 
 
 화면크기를 변경하지 않은 채로 스크롤 움직였을 때
 
-![absolute_3-2](CSS Position.assets/absolute_3-2.png)
+<img src="CSS Position.assets/absolute_3-2.png" alt="absolute_3-2"  />
 
 ---
 
@@ -297,4 +297,4 @@
 }
 ```
 
-![fixed](CSS Position.assets/fixed.png)
+<img src="CSS Position.assets/fixed.png" alt="fixed"  />
