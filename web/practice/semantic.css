@@ -1,0 +1,60 @@
+body {
+  font-family: Arial;
+  width: 800px;
+}
+
+/* 
+  클래스로 스타일링하는 법 손에 익히기!
+
+  1) 공통적으로 적용될 수 있는 스타일을 클래스 형태로 미리 만들어둔다.
+  2) HTML에서 내가 원하는 곳에 클래스를 삽입해서 해당 스타일을 적용한다.
+*/
+
+
+/* 모든 스타일링 요소를 클래스로 만들어 사용합니다. */
+
+/* 1. article 태그는 white로 나머지 시멘틱 태그는 lightgrey로 배경색을 바꿔주세요. */
+
+/* 2. 모든 시멘틱 태그의 margin과 padding을 4px로 만들어주세요. */
+
+/* 3. h1 태그를 중앙 정렬 시켜주세요. */
+
+/* 4. section과 aside 태그의 display를 inline-block으로 바꿔주세요. */
+
+/* 5. section 태그는 width 482px height 300px, aside 태그는 width 280px height 300px로 만들어주세요.*/
+
+/* 6. aside 태그에 vertical-align속성의 값을 top으로 적용해주세요.*/
+
+/* 7. 모든 semantic 태그의 border 모서리 반경을 4px로 만들어주세요. */
+
+.box {
+  background-color: lightgrey;
+  border-radius: 4px;
+}
+
+.mp-4 {
+  margin: 4px;
+  padding: 4px;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.section {
+  display: inline-block;  /* inline은 width, height 설정 안됨. 그래서 inline-block으로 설정해줘야함 */
+  width: 482px; 
+  height: 300px;
+}
+
+.article {
+  background-color: white;
+}
+
+.aside {
+  display: inline-block;
+  width: 280px; 
+  height: 300px;
+  vertical-align: top;
+  line-height: 250px;
+}

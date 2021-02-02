@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOX Model Practice</title>
+  <link rel="stylesheet" href="box_model.css">
+  <style>
+    .big-box {
+      position: relative;  /* 부모요소가 기준점을 가지고 있어서 absolute 쓸 수 있음!! */
+      margin: 100px auto 500px;
+      border: 5px solid black;
+      width: 500px;
+      height: 500px;
+    }
+
+    .small-box {
+      width: 100px;
+      height: 100px;
+    }
+
+    #red {
+      background-color: red;
+      /* 큰 사각형 내부의 우측 하단 모서리에 빨간 사각형 위치시키기 */
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    #gold {
+      background-color: gold;
+      /* 브라우저의 하단에서 50px, 우측에서 50px 위치에 고정하기 */
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+    }
+
+    #green {
+      background-color: green;
+      /* 큰 사각형의 가운데 위치시키기 */
+      position: absolute;
+      margin: 200px;
+      /* left: 200px;
+      top: 200px; */
+    }
+
+    #blue {
+      background-color: blue;
+      /* 큰 사각형 좌측 상단 모서리에서 100px, 100px 띄우기 */
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+
+    #pink {
+      background-color: pink;
+      /* 큰 사각형 내부의 좌측 상단 모서리로 옮기기*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="big-box">
+    <div class="small-box" id="red"></div>
+    <div class="small-box" id="gold"></div>
+    <div class="small-box" id="green"></div>
+    <div class="small-box" id="blue"></div>
+    <div class="small-box" id="pink"></div>
+  </div>
+</body>
+
+</html>
