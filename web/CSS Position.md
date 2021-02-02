@@ -163,7 +163,7 @@
 }
 ```
 
-![](CSS Position.assets/absolute_1.png)
+![absolute_1](CSS Position.assets/absolute_1.png)
 
 <br>
 
@@ -242,7 +242,7 @@
 }
 ```
 
-![absolute_3](CSS Position.assets/absolute_3.png)
+<img src="CSS Position.assets/absolute_3.png" alt="absolute_3"  />
 
 <br>
 
@@ -297,4 +297,4 @@
 }
 ```
 
-![](CSS Position.assets/fixed.png)
+![fixed](CSS Position.assets/fixed.png)
