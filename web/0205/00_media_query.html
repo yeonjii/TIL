@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+<style>
+  /* @media print {
+      body {
+          color: red;
+      }
+  } */
+  /* @media (min-width: 600px) {
+      body {
+          color: red;
+      }
+  } */
+  /* @media (orientation: landscape) {
+      body {
+          color: rebeccapurple;
+      }
+  } */
+  /* @media (min-width: 400px) and (orientation: landscape) {
+      body {
+          color: blue;
+      }
+  } */
+  div {
+    border: 2px solid black;
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+  }
+  @media (max-width: 576px) {
+    div {
+      width: 100%;
+    }
+  }
+  @media (max-width: 750px) and (min-width: 576px) {
+    div {
+      width: 40%;
+    }
+  }
+  @media (max-width: 1050px) and (min-width: 750px) {
+    div {
+      width: 10%;
+    }
+  }
+</style>
+<div></div>
+<div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

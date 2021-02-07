@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+  div {
+      border: 2px solid black;
+      background-color: brown;
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      animation: move, color-change;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+  }
+  @keyframes move {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: 200px;
+    }
+  }
+  @keyframes color-change {
+    0% {
+      background-color: red;
+    }
+    15% {
+      background-color: orange;
+    }
+    30% {
+      background-color: yellow;
+    }
+    45% {
+      background-color: green;
+    }
+    60% {
+      background-color: blue;
+    }
+    75% {
+      background-color: navy;
+    }
+    100% {
+      background-color: purple;
+    }
+    
+  }
+  </style>
+  <div></div>
+</body>
+</html>

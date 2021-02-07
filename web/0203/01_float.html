@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 150px;
+      height: 150px;
+      border: 1px solid black;
+      background-color: crimson;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+    }
+
+    .box2 {
+      width: 300px;
+      height: 150px;
+      border: 1px solid black;
+      background-color: blue;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+    }
+
+    .left {
+      float: left;
+    }
+
+    /* clearfix는 float된 태그의 부모한테 적용해야함! */
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;  /* float된 애들 둘 다 막겠다. 왼쪽만 막고 싶으면 clear: left;라고 작성 */
+    }
+  </style>
+</head>
+<body>
+  <header class="clearfix">
+    <div class="box1 left">div</div>
+  </header>
+  <div class="box2">div</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+p {
+  font-family: Arial;
+}
+
+.container {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+
+/* 아래부터 작성 */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  border: 2px dashed black;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.card-nav {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+}
+
+.card-header {
+  padding: 18px;
+}
+
+.card-header-img {
+  width: 100%;
+  height: 330px;
+  display: block;
+}
+
+.card-header-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  color: white;
+  height: 70px;
+  justify-content: center;
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.card-body-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body-description {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: linen;
+}
+
+.card-footer {
+  display: flex;
+  background-color: green;
+  color: white;
+  height: 50px;
+  /* flex-direction: row-reverse; */
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* 박스 스타일링 */
+      width: 200px;
+      height: 200px;
+      background: crimson;
+      border: 5px dotted lightgrey;
+      border-radius: 12px;
+
+      float: left;
+    }
+
+    .new-box {
+      /* 박스 스타일링 */
+      width: 300px;
+      height: 300px;
+      background: darkorange;
+      border: 5px dotted lightgrey;
+      border-radius: 12px;
+    }
+
+    /* 가상 클래스 선택자 -> clearfix 클래스 내부의 뒤쪽 */
+    .clearfix::after {
+      content: "";
+      clear: both; /* float 속성을 해제시킴 */
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="clearfix">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- ::after -> 여기가 clearfix 클래스 내부의 뒤쪽! 여기서 float left & right를 해제시킴 -->
+  </div>
+  <div class="new-box"></div>
+</body>
+</html>
