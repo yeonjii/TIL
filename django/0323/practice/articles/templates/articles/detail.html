@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>DETAIL</h1>
+
+<div class="mt-5">
+<hr>
+<h3>{{ article.title }}</h3><br>
+<p>{{ article.content }}</p><br>
+<p>Created : {{ article.created_at }}</p>
+<p>Modified : {{ article.updated_at }}</p>
+<hr>
+</div>
+
+<div class="d-flex mt-4">
+  <a class="btn violet" href="{% url 'articles:update' article.pk %}">EDIT</a>
+  <form action="{% url 'articles:delete' article.pk %}" method="POST">
+    {% csrf_token %}
+    <button class="btn red ms-2">DELETE</button>
+  </form>
+  <a class="btn darkblue ms-2" href="{% url 'articles:index' %}">BACK</a>
+</div>
+{% endblock %}

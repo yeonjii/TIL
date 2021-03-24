@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand navbar-light" style="background-color: #F8DDFF;">
+  <a class="navbar-brand" href="{% url 'articles:index' %}">　Articles</a>
+
+  {% if user.is_authenticated %}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active btn" style="background-color: #D9BAFF;">👋 Hello, ✨{{ request.user }}✨</a>
+      </li>
+      <li class="nav-item">
+        <form action="{% url 'accounts:logout' %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" class="btn" value="Logout">
+        </form>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'accounts:update' %}">Update Info　</a>
+      </li>
+      <li class="nav-item">
+        <form action="{% url 'accounts:delete' %}" method="POST">
+          {% csrf_token %}
+          <button class="btn red" type="submit">Delete account</button>
+        </form>
+      </li>
+    </ul>
+
+  {% else %}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'accounts:login' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'accounts:signup' %}">Sign Up</a>
+      </li>
+    </ul>
+  {% endif %}
+
+</nav>

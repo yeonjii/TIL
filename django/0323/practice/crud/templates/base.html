@@ -1,0 +1,45 @@
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% bootstrap_css %}
+  <title>Document</title>
+  <style>
+  .yell {
+    background-color: #D9BAFF;
+    color: #4E0DB8;
+  }
+  .violet {
+    background-color: #D085EA;
+    color: #FEFEFE;
+  }
+  .red {
+    background-color: #FF7562;
+    color: #FEFEFE;
+  }
+  .darkblue {
+    background-color: #7280A7;
+    color: #FEFEFE;   
+  }
+  .indigo {
+    background-color: #6495ED;
+    color: #FEFEFE;
+  }
+  .mt50 {
+    margin-top: 50px;
+  }
+  </style>
+</head>
+<body>
+  {% include 'nav.html' %}
+  <div class="container mt50">
+    {% block content %}
+    {% endblock %}
+  </div>
+  {% bootstrap_javascript %}
+</body>
+</html>
