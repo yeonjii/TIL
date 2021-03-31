@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'articles:index' %}">Articles</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      {% if request.user.is_authenticated %}
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link active me-3 fs-5" href="{% url 'accounts:profile' request.user.username %}">💗 Hello, <b>{{ request.user }}</b> 💗</a>
+              <a class="nav-link mt-1" href="{% url 'accounts:profile' request.user.username %}">내 프로필</a>
+              <a class="nav-link mt-1" href="{% url 'accounts:update' %}">회원정보수정</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+              <form action="{% url 'accounts:logout' %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-outline-secondary btn-sm mt-1 me-2" value="Logout">
+              </form>
+              <form action="{% url 'accounts:delete' %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-outline-danger btn-sm mt-1" value="탈퇴">
+              </form>
+            </div>
+
+      {% else %}
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+          <a class="nav-link"  href="{% url 'accounts:signup' %}">Signup</a>
+        </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</nav>
+

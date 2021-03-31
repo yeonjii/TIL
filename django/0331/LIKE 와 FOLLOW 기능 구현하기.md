@@ -6,7 +6,7 @@
 
 ## Like 좋아요 기능
 
-**# User-Article  M:N관계 **
+**# User-Article  M:N관계**
 
 M:N 은 User와 Article 둘 중 어느곳이나 작성 가능. (Article이 이미 User를 참조하고 있어서 그냥 참조하고 있는 곳에 추가로 참조해줌)
 
@@ -21,7 +21,9 @@ M:N 은 User와 Article 둘 중 어느곳이나 작성 가능. (Article이 이�
 |                article.user.                 |            article.like_users.             |
 | user.article_set : 유저가 작성한 모든 게시글 | user.article_set : 좋아요 누른 모든 게시글 |
 
-역참조시, `user.article_set` 의 역할이 다른데 related manager가 같아서 migration 작업 시 에러가 발생한다. -> `related_name='like_articles'` 설정해줌
+역참조시, `user.article_set` 의 역할이 다른데 related manager가 같아서 migration 작업 시 에러가 발생한다. 
+
+-> `related_name='like_articles'` 설정해줌
 
 ```python
 from django.db import models
