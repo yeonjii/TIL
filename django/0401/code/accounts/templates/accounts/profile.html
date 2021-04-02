@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load gravatar %}
+
+{% block content %}
+<div class="d-flex mb-3">
+  <img src="https://s.gravatar.com/avatar/{{ request.user.email|gravatar_url }}?s=80&d=monsterid" alt="gravatar">
+  <div class="fs-1 ms-4 d-flex align-items-center">{{ person.username }}님의 프로필</div>
+</div>
+
+{% with followings=person.followings.all followers=person.followers.all %}
+<div>
+  <p>팔로잉 : {{ followings|length }}  |  팔로워 : {{ followers|length }}</p>
+  <div>
+    <li>팔로잉 : </il>
+    {% for following in followings %}
+      {{ following }}
+    {% endfor %}
+    <li>팔로워 : </il>
+    {% for follower in followers %}
+      {{ follower }}
+    {% endfor %}
+  </div>
+    {% if request.user != person %}
+    <div>
+      <form action="{% url 'accounts:follow' person.pk%}" method="POST">
+        {% csrf_token %}
+        {% if request.user in followers %}
+          <button>언팔로우</button>
+        {% else %}
+          <button>팔로우</button>
+        {% endif %}
+      </form>
+    </div>
+    {% endif %}
+</div>
+{% endwith %}
+<hr>
+
+<h3>{{ person.username }}'s 게시글</h3>
+{% for article in person.article_set.all %}
+  <p>{{ article.title }}</p>
+{% endfor %}
+<hr>
+
+<h3>{{ person.username }}'s 댓글</h3>
+{% for comment in person.comment_set.all %}
+  <p>{{ comment.content }}</p>
+{% endfor %}
+<hr>
+
+<h3>{{ person.username }}'s LIKES</h3>
+<p>({{ person.like_articles.all|length }})</p>
+<hr>
+
+<a href="{% url 'articles:index' %}">[back]</a>
+{% endblock %}

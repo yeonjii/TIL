@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+{% if request.resolver_match.url_name == 'login' %}
+  <h1>LOGIN</h1>
+{% elif request.resolver_match.url_name == 'signup' %}
+  <h1>SIGN UP</h1>
+{% elif request.resolver_match.url_name == 'update' %}
+  <h1>UPDATE</h1>
+{% elif request.resolver_match.url_name == 'change_password' %}
+  <h1>Change Password</h1>
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input type="submit">
+</form>
+{% endblock %}

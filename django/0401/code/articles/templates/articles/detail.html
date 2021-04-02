@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+  <h2>DETAIL</h2>
+  <h3>{{ article.pk }} 번째 글</h3>
+  <hr>
+  <p>작성자 : {{ article.user }}</p>
+  <p>제목 : {{ article.title }}</p>
+  <p>내용 : {{ article.content }}</p>
+  <p>작성시각 : {{ article.created_at|naturalday }}</p>
+  <p>수정시각 : {{ article.updated_at|naturaltime }}</p>
+
+  {% with likes=article.like_users.all %}
+    <div class="d-flex">
+      {% if request.user.is_authenticated %}
+      <form action="{% url 'articles:likes' article.pk %}" method="POST" class="me-3">
+        {% csrf_token %}
+        {% if request.user in likes %}
+          <button class="btn btn-outline-danger btn-sm">
+            <i class="fas fa-heart" style="color: red;"></i>
+          </button>
+        {% else %}
+          <button class="btn btn-outline-dark btn-sm">
+            <i class="fas fa-heart" style="color: dark;"></i>
+          </button>
+        {% endif %}
+      </form>
+      <div class="d-flex align-items-center">
+        {% if likes|length == 0 %}
+          좋아요를 눌러주세요!
+        {% elif likes|length == 1 %}
+          {{ likes.0.username }}님이 좋아합니다.
+        {% else %}
+          {{ likes.0.username }}님 외 {{ likes|length|add:"-1" }}명이 좋아합니다.
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  {% endwith %}
+
+  <hr>
+  {% if request.user == article.user %}
+    <div class="d-flex">
+      <a href="{% url 'articles:update' article.pk %}" class="btn btn-primary btn-sm">UPDATE</a>
+      <form action="{% url 'articles:delete' article.pk %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger btn-sm ms-2">DELETE</button>
+      </form>
+    </div>
+  {% endif %}
+  <a href="{% url 'articles:index' %}">[back]</a>
+  <hr>
+  <h4>댓글 목록</h4>
+  <p>{{ comments|length }}개의 댓글이 있습니다.</p>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        @{{ comment.user }} - {{ comment.content }}
+        {% if request.user == comment.user %}
+          <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <input type="submit" value="DELETE">
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}
+      <p>아직 댓글이 없습니다</p>
+    {% endfor %}
+  </ul>
+  <hr>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'articles:comments_create' article.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form }}
+      <input type="submit">
+    </form>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[댓글을 작성하려면 로그인 하세요.]</a>
+  {% endif %}
+{% endblock %}

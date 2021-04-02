@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Articles</h1>
+  {% if request.user.is_authenticated %}
+    <a href="{% url 'articles:create' %}">[CREATE]</a>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[새 글을 작성하려면 로그인하세요.]</a>
+  {% endif %}
+  <hr>
+  {% for article in articles %}
+    <p>
+      <b>작성자 : <a href="{% url 'accounts:profile' article.user.username %}">{{ article.user }}</a></b>
+    </p>
+    <p>글 번호 : {{ article.pk }}</p>
+    <p>글 제목 : <b>{{ article.title }}</b></p>
+    <p>글 내용 : {{ article.content }}</p>
+    
+  <div>
+    <form action="{% url 'articles:likes' article.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in article.like_users.all %}
+        <button class="btn btn-outline-danger btn-sm">
+          <i class="fas fa-heart" style="color: red;"></i>  {# 이미 좋아요를 누른 상태이므로 빨간하트 #}
+        </button>
+      {% else %}
+        <button class="btn btn-outline-dark btn-sm">
+          <i class="fas fa-heart" style="color: dark;"></i>  {# 아직 좋아요를 안 누른 상태이므로 검은하트 #}
+        </button>
+      {% endif %}
+    </form>
+  </div>
+
+    <a href="{% url 'articles:detail' article.pk %}">[DETAIL]</a>
+    <hr>
+  {% endfor %}
+{% endblock %}
