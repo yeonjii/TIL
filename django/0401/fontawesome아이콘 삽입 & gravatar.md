@@ -6,7 +6,7 @@ https://fontawesome.com/ 사이트에서 로그인 후 Kits 탭에 들어가면 
 
 이걸 가장 최상단의 기본이 되는 html 파일의 head 태그에 등록하면 된다.
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402224034532.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402224034532.png"  />
 
 - base.html
 
@@ -71,9 +71,9 @@ https://fontawesome.com/ 사이트에서 로그인 후 Kits 탭에 들어가면 
 
 - 게시글 목록 페이지
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402232543323.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402232543323.png"  />
 
-![](fontawesome아이콘 삽입 & gravatar.assets/GIF.gif)
+![](fontawesome아이콘 삽입 & gravatar.assets/GIF-1617375791882.gif)
 
 <br>
 
@@ -81,9 +81,9 @@ https://fontawesome.com/ 사이트에서 로그인 후 Kits 탭에 들어가면 
 
 좋아요를 누른 유저의 수도 함께 출력하였다.
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402234022214.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402234022214.png"  />
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402234736556.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402234736556.png"  />
 
 
 
@@ -99,7 +99,7 @@ Gravatar 'API'는 인증이 필요하지 않다. HTTP GET 요청 하나로 모�
 
 https://ko.gravatar.com/site/check 에서 이메일을 등록하면 해시가 생성된다. 
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402223416699.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402223416699.png"  />
 
 이 해시를 이용해 소셜프로필 기능을 구현할 것이다. 
 
@@ -111,7 +111,7 @@ https://ko.gravatar.com/site/check 에서 이메일을 등록하면 해시가 �
 
 gravatar를 사용할 앱폴더에 `templatetags` 라는 폴더를 만든 후, 그 안에 `__init__.py`, `gravatar.py` 파일을 생성한다. 
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402230313758.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402230313758.png"  />
 
 https://ko.gravatar.com/site/implement/images/django/ 여기서 필요한 코드를 갖고 오면 된다.
 
@@ -152,7 +152,7 @@ https://ko.gravatar.com/ 사이트에 접속하여 로그인하여 계정을 생
 
 ### 결과 이미지
 
-![](fontawesome아이콘 삽입 & gravatar.assets/image-20210402231037782.png)
+<img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402231037782.png"  />
 
 
 
