@@ -95,7 +95,9 @@ https://fontawesome.com/ 사이트에서 로그인 후 Kits 탭에 들어가면 
 
 <br>
 
-# Gravatar 이용하여 소셜로그인하기
+# Gravatar로 아바타 만들기
+
+Gravatar는 이메일주소를 기반으로 사용자의 프로필과 아바타를 등록해두고 필요에 따라 불러들여 매번 각각의 애플리케이션마다 이를 작성해야 하는 노고를 줄여주는 애플리케이션이다.
 
 Gravatar 'API'는 인증이 필요하지 않다. HTTP GET 요청 하나로 모든 것을 처리하는 서비스이다.
 
@@ -103,7 +105,7 @@ https://ko.gravatar.com/site/check 에서 이메일을 등록하면 해시가 �
 
 <img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402223416699.png"  />
 
-이 해시를 이용해 소셜프로필 기능을 구현할 것이다. 
+이 해시를 이용해 프로필 사진 기능을 구현할 것이다. 
 
 사용자가 회원가입 시 등록하는 이메일을 해시값으로 바꾸면 된다 !
 
