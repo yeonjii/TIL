@@ -73,7 +73,9 @@ https://fontawesome.com/ 사이트에서 로그인 후 Kits 탭에 들어가면 
 
 <img src="fontawesome아이콘 삽입 & gravatar.assets/image-20210402232543323.png"  />
 
-![](fontawesome아이콘 삽입 & gravatar.assets/0401giff.gif)
+<br>
+
+<img src="fontawesome아이콘 삽입 & gravatar.assets/0401giff.gif"  />
 
 <br>
 
