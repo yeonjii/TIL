@@ -1,8 +1,20 @@
-# Django REST Framework - 단일 모델
+# Django REST Framework - 단일 모델 CRUD
 
-단일 모델의 data를 직렬화(Serialization)하여 JSON으로 변환하는 방법에 대한 학습 요청은 [Postman](https://www.postman.com/) 사용
+단일 모델의 data를 직렬화(Serialization)하여 JSON으로 변환하는 방법에 대한 학습 요청은 [Postman](https://www.postman.com/) 을 사용한다.
+
+⭐ **HTTP Method 종류**
+
+- GET -> 서버에 변화 X (Read)
+
+- POST -> 서버에 변화 O (Create)
+
+- PUT -> 서버에 변화 O (Update)
+
+- DELETE -> 서버에 변화 O (Delete)
 
 <br>
+
+### 초기설정
 
 - 가상 환경 구성
 
@@ -52,6 +64,8 @@ urlpatterns = [
 
 - 모델링
 
+DB(`models.py`) 수정 했으므로 migrations 작업 잊지말고 해주기 !
+
 ```python
 # articles/models.py
 
@@ -62,13 +76,6 @@ class Article(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-```
-
-DB(`models.py`) 수정 했으므로 migrations 작업 잊지말고 해주자
-
-```bash
-$ python manage.py makemigrations
-$ python manage.py migrate
 ```
 
 - **더미 데이터 생성 ([django_seed](https://github.com/Brobin/django-seed))**
@@ -85,6 +92,8 @@ $ python manage.py seed articles --number=20
 
 - Model의 필드를 어떻게 '직렬화'할 지 설정하는 것이 포인트
 - Django에서 ModelForm의 필드를 설정하는 과정과 동일
+- modelform → model serializer => 복잡한걸 JSON 형태로 change ! 
+
 
 ```python
 # articles/serializers.py
@@ -193,18 +202,18 @@ class ArticleSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-<br>
+
 
 ```python
 # articles/urls.py
 
 urlpatterns = [
 	 ...,
-   path('articles/<int:article_pk>/', views.article_detail),
+   path('articles/<int:article_pk>/', views.article_detail),  # ⭐pk키가 필요한 작업은 같은 URL을 사용하되, view함수에서 method로 구분해줌 ! (C,U,D)
 ]
 ```
 
-<br>
+
 
 ```python
 # articles/views.py
@@ -229,6 +238,14 @@ def article_detail(request, article_pk):
 <br>
 
 ## API 서버에 생성 요청 처리하기 - CREATE(POST)
+
+⭐ url을 `path('articles/create', views.article_create)` 로 작성하는 것은 RESTful 하지 않다.
+
+URI에 불필요한 정보(행위 표현)이 포함되어 있기 때문. **자원에 대한 행위는 HTTP method로 표현한다.**
+
+-> 따로 url 안 만들고 views.py에서 POST요청으로 처리 (최대한 url 덜 쓰려고)
+
+
 
 ```python
 # articles/views.py
