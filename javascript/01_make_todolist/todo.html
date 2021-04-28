@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>　TODO LIST</h1>
+    <input type="text">
+    <button>Add</button>
+    <ul></ul>
+  <script>
+
+    function onClick(){
+      // input창에 입력된 텍스트를 가지고 온다.
+      const input = document.querySelector('input')
+
+      // 빈 값은 입력하지 못하도록 설정
+      if (input.value != '') {
+        // ul태그에 자식으로 li태그를 만들어서 추가하려면? -> li태그 만들고 ul태그 갖고 와서 자식으로 추가
+        const newTodoLi = document.createElement('li')
+        newTodoLi.innerText = input.value  // li태그에 글 입력
+        const ul = document.querySelector('ul')
+        ul.appendChild(newTodoLi)
+        input.value = ''  // input 입력 후 초기화 (null로 해도 됨)
+      }
+    }
+
+    const addButton = document.querySelector('button')
+    addButton.addEventListener('click', onClick)
+
+    // 위의 함수에서 사용하는 input은 여기서 사용 못하기 때문에 새로 가져와야 한다.
+    const myInput = document.querySelector('input')
+    myInput.addEventListener('change', onClick)
+
+  </script>
+</body>
+</html>
