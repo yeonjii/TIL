@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+<div style="margin-left: 30%;">
+  <h1>TODO LIST</h1>
+  <form action="/todos/">
+  <input type="text">
+  <button>Todo</button>
+  </form>
+  <ul></ul>
+</div>
+  <script>
+
+    function addTodo () {  // 파라미터가 비었음에도 디폴트로 event가 들어가기 때문에 preventDefault를 넣어준다.
+      event.preventDefault()
+      const input = document.querySelector('input')
+      const content = input.value
+
+      // 만약 문자열이 비어있지 않다면 == 문자열이 있다면
+      if (content.trim()) {  // trim:양쪽에 띄어쓰기를 날린 것
+        const li = document.createElement('li')
+        li.innerText = content
+    
+        const ul = document.querySelector('ul')
+        ul.appendChild(li)
+
+        const deleteBtn = document.createElement('button')
+        deleteBtn.innerText = 'X'
+        li.appendChild(deleteBtn)
+        deleteBtn.addEventListener('click', function () {
+          // ul.removeChild(li)
+          // li.remove()
+          event.target.parentNode.remove()
+        })
+
+        li.addEventListener('click', function (event) {
+          // if (event.target.classList.contains('done')) {
+          //   event.target.classList.remove('done')
+          // } else {
+          //   event.target.classList.add('done')
+          // }
+          event.target.classList.toggle('done')  // toggle: on-off 기능 구현
+        })
+
+      } else {
+        alert('빈칸 입니다 ! 내용을 입력해주세요.')
+      }
+  
+      event.target.reset()  // input.value를 초기화
+    }
+
+    // Enter, click 전부 가능 (form 제출하면 자동으로 등록)
+    const form = document.querySelector('form')
+    form.addEventListener('submit', addTodo)
+
+  </script>
+</body>
+</html>
