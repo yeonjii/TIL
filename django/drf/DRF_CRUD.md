@@ -333,3 +333,12 @@ def article_detail(request, article_pk):
             return Response(serializer.data)
 ```
 
+
+
+- PUT과 PATCH의 차이점 ?
+- PUT : 수정을 하더라도 모든 데이터를 다 넘겨줘라
+  - 자원의 전체 교체, 자원 교체시 모든 필드 필요
+  - 만약 전체가 아닌 일부만 전달할 경우, 전달한 필드 외에 모두 null or 초기값 처리되니 주의해야 한다.
+- PATCH : 수정할 것만 넘겨줘라
+  - 자원의 부분 교체, 자원교체시 일부 필드 필요
+

@@ -37,7 +37,7 @@ def article_detail(request, article_pk):
         serializer = ArticleSerializer(article, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-        return Response(serializer.data)
+            return Response(serializer.data)
 
 
 @api_view(['GET'])
@@ -63,7 +63,7 @@ def comment_detail(request, comment_pk):
         serializer = CommentSerializer(insatnce=comment, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-        return Response(serializer.data)
+            return Response(serializer.data)
 
 
 @swagger_auto_schema(methods=['POST'], request_body=CommentSerializer)
