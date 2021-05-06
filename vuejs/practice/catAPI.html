@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Cat API</h1>
+    <!-- ⭐:바인딩 시켜줌 !!! -->
+    <img :src="catImgUrl" alt="" style="height: 300px;">
+    <br>
+    <button @click="getCat">Get Cat</button>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        catImgUrl: '',
+      },
+      methods: {
+        getCat: function() {
+          // API 요청
+          // 상수: 개발자의 의지와 상관없이 '거의' 바뀔 가능성이 없는 값
+          const API_URL = 'https://api.thecatapi.com/v1/images/search'
+          axios.get(API_URL)  // axios-> promise 반환 !
+          .then((response) => {  //promise가 성공했을 때
+            const imgUrl = response.data[0].url
+            this.catImgUrl = imgUrl
+          })
+        },
+      },
+    })
+  </script>
+</body>
+</html>
