@@ -3,12 +3,11 @@
 > **Vuex를 사용하는 이유 ?**
 >
 > - 컴포넌트가 많아졌을 경우 데이터의 관리가 어려워짐
->
 > - **컴포넌트 간 데이터 공유**를 편하게 하기 위하여 사용
 
 대부분의 경우, 실제로 Vuex 거의 사용
 
-<br>
+
 
 ## 1. Vuex 구성 요소
 
@@ -18,7 +17,7 @@
 - actions : state를 비동기적으로 변경하는 역할 
   - (참고) mutations를 통해 "간접적으로" state를 변경한다.
 
-<br>
+
 
 ## 2. 컴포넌트에서의 활용법
 
@@ -32,7 +31,7 @@
   this.$store.getters.함수명
   ```
 
-<br>
+
 
 - mutations, actions => methods에서 주로 활용
 
@@ -46,7 +45,7 @@
   this.$store.dispatch('함수명', 매개변수)
   ```
 
-<br>
+
 
 ## 3. Vuex Helper
 
@@ -76,10 +75,11 @@
   }
   ```
 
-
 <br>
 
 ---
+
+
 
 # [animal-app] Vuex 연습
 
@@ -98,11 +98,11 @@ $ npm run serve
 
 - 에러는 `try~catch` 를 작성하여 처리
 
-- 장점 : 가독성 굿굿, 최신문법 - 실제개발, 현업에서는 `async-await` 많이 씀
+- 장점 : 가독성 굿굿 & 최신문법 - 실제 개발, 현업에서는 `async-await` 많이 씀
 
 <br>
 
-- 사용전
+- `async-await`  사용전
 
 ```javascript
 // App.vue
@@ -110,7 +110,7 @@ $ npm run serve
 methods: {
   ...mapMutations(['UPDATE_ANIMAL_IMAGES']),
   fetchCatImg() {
-    const CAT_API_URL = 'https://api.thecatapi.com/v1/images/search'
+    const CAT_API_URL = 'https://api.~~~'
     axios.get(CAT_API_URL)
     .then((response) => {
       const catImgUrl = response.data[0].url
@@ -123,7 +123,10 @@ methods: {
 }
 ```
 
+
+
 - `async-await` 사용
+  - axios는 promise 객체를 반환하는데,  resolve일때의 값이 response에 담기는 것
 
 ```javascript
 methods: {
@@ -137,7 +140,9 @@ methods: {
 }
 ```
 
-- + 에러 처리
+
+
+- `async-await` 사용 + 에러 처리
 
 ```javascript
 methods: {
@@ -154,4 +159,15 @@ methods: {
     }
 }
 ```
+
+
+
+<br>
+
+## 결과
+
+![resgif](https://user-images.githubusercontent.com/77573938/118144014-ebb2b500-b446-11eb-9e10-9627a9600086.gif)
+
+
+
 
